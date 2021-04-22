@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Languages</title>
+</head>
+<body>
+	<h1>
+		List of languages
+	</h1>
+	<ul>
+		{% for lan in langs %}
+			<li>{{lan}} language</li>
+			{% empty %}
+    		<li>Langs array is empty</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

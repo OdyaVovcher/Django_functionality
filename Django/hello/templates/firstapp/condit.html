@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Contidion
+{% endblock title %}
+{% block header %}
+	IF ELSE
+{% endblock header %}
+{% block content %}
+	{% if n > 0 %}
+		<p>Число положительное</p>
+	{% elif n < 0 %}
+		<p>Число отрицательное</p>
+	{% else %}
+		<p>Число рано нулю</p>
+	{% endif %}
+
+{% endblock content %}

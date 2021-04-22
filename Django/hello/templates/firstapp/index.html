@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Модели в Django</title>
+</head>
+<body class = "container">
+	<form method="post" action="create/">
+		{% csrf_token %}
+		<p>
+			<label>Введите Имя</label><br>
+			<input type="text" name="name" />
+		</p>
+
+		<p>
+			<label>Введите возраст</label><br>
+			<input type="number" name="age" />
+		</p>
+
+		<input type="submit" value="Сохранить">
+
+		{% if people.count > 0 %}
+			<h2> Список пользователей </h2>
+			<table>
+				<tr><th>ID</th><th>Имя</th><th>Возраст</th></tr>
+				{% for person in people %}
+					<tr><td>{{ person.id }}</td><td>{{ person.name }}</td><td>{{ person.age }}</td></tr>
+				{% endfor %}
+			</table>
+		{% endif %}
+	</form>
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus dolor ut deleniti non eaque ratione culpa vel, magni, qui excepturi porro ea, animi suscipit maiores praesentium dolorem delectus. Ratione, fuga?</p>
+</body>
+</html>
