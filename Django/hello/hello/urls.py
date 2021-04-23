@@ -25,6 +25,9 @@ urlpatterns = [
 	path('',views.index, name = 'home'),
     path('create/', views.create),
     path('condit/', views.condit),
+    path('edit/<int:id>/', views.edit),
+    path('delete/<int:id>/', views.delete),
+
     path('langs/', views.langs),
 
     path('about/', TemplateView.as_view(template_name = "firstapp/about.html",
